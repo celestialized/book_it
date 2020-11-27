@@ -24,6 +24,8 @@
 
 /public/assets
 .byebug_history
+.ruby-version
+.tool-versions
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
