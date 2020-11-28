@@ -1,0 +1,27 @@
+<div class="page-header">
+  <%= link_to schedules_path, class: 'btn btn-default' do %>
+    All Schedules
+  <% end %>
+  <%= link_to edit_schedule_path(@schedule), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show schedule</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @schedule.title %></dd>
+
+  <dt>Start:</dt>
+  <dd><%= @schedule.start %></dd>
+
+  <dt>End:</dt>
+  <dd><%= @schedule.end %></dd>
+
+  <dt>Consultant:</dt>
+  <dd><%= @schedule.consultant %></dd>
+
+  <dt>Account:</dt>
+  <dd><%= @schedule.account %></dd>
+
+</dl>

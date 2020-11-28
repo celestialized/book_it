@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include LocalTimeHelper
   def bootstrap_class_for(flash_type)
     {
       success: "alert-success",

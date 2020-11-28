@@ -72,3 +72,10 @@ gem 'redis', '~> 4.2', '>= 4.2.2'
 gem 'sidekiq', '~> 6.0', '>= 6.0.3'
 gem 'sitemap_generator', '~> 6.1', '>= 6.1.2'
 gem 'whenever', require: false
+
+## custom to app
+gem 'amoeba', '~> 3.1'
+
+  # time zones
+  gem 'local_time', '~> 2.1'
+  gem 'timezone', '~> 1.3', '>= 1.3.10'
