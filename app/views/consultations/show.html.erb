@@ -1,0 +1,51 @@
+<div class="page-header">
+  <%= link_to consultations_path, class: 'btn btn-default' do %>
+    All Consultations
+  <% end %>
+
+  <%= link_to custom_url(:lesson_id => @consultation.id), 
+      class: "course-btn" do %><i class="fa fa-calendar-plus-o">
+      </i> Book This Consultation
+  <% end %>
+  
+  <h1><%= @consultation.title || "Show consultation" %></h1>
+    <dd><% @consultation.images.each do |image| %>
+        <%= link_to image do %>
+          <%= image_tag image, width: "250px" %>
+        <% end %>
+        
+      <% end %>
+
+  </dd>
+
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @consultation.title %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @consultation.description %></dd>
+
+  <dt>Duration in minutes:</dt>
+  <dd><%= @consultation.duration_in_minutes %></dd>
+
+  <dt>Cost in pennies:</dt>
+  <dd><%= @consultation.cost_in_pennies %></dd>
+
+  <dt>Category:</dt>
+  <dd><%= @consultation.category %></dd>
+
+  <dt>Level:</dt>
+  <dd><%= @consultation.level %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @consultation.description %></dd>
+
+  <dt>Number of sessions:</dt>
+  <dd><%= @consultation.number_of_sessions %></dd>
+
+  <dt>Sku:</dt>
+  <dd><%= @consultation.sku %></dd>
+
+</dl>

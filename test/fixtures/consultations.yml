@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  duration_in_minutes: 1
+  cost_in_pennies: 1
+  category: MyString
+  level: MyString
+  description: MyString
+  number_of_sessions: 1
+  sku: MyString
+
+two:
+  title: MyString
+  duration_in_minutes: 1
+  cost_in_pennies: 1
+  category: MyString
+  level: MyString
+  description: MyString
+  number_of_sessions: 1
+  sku: MyString
