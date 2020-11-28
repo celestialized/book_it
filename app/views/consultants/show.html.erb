@@ -1,0 +1,27 @@
+<div class="page-header">
+  <%= link_to consultants_path, class: 'btn btn-default' do %>
+    All Consultants
+  <% end %>
+  <%= link_to edit_consultant_path(@consultant), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show consultant</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>First name:</dt>
+  <dd><%= @consultant.first_name %></dd>
+
+  <dt>Last name:</dt>
+  <dd><%= @consultant.last_name %></dd>
+
+  <dt>Phone:</dt>
+  <dd><%= @consultant.phone %></dd>
+
+  <dt>Bio:</dt>
+  <dd><%= @consultant.bio %></dd>
+
+  <dt>User:</dt>
+  <dd><%= @consultant.user %></dd>
+
+</dl>

@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_232817) do
+ActiveRecord::Schema.define(version: 2020_11_28_030835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "name"
+    t.string "sku"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +48,45 @@ ActiveRecord::Schema.define(version: 2020_11_27_232817) do
     t.string "announcement_type"
     t.string "name"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.string "phone"
+    t.text "bio"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "last_name"
+    t.string "first_name"
+    t.bigint "account_id", null: false
+    t.index ["account_id"], name: "index_clients_on_account_id"
+    t.index ["user_id"], name: "index_clients_on_user_id"
+  end
+
+  create_table "consultants", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone"
+    t.text "bio"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "account_id", null: false
+    t.index ["account_id"], name: "index_consultants_on_account_id"
+    t.index ["user_id"], name: "index_consultants_on_user_id"
+  end
+
+  create_table "consultations", force: :cascade do |t|
+    t.string "title"
+    t.integer "duration_in_minutes"
+    t.integer "cost_in_pennies"
+    t.string "category"
+    t.string "level"
+    t.string "description"
+    t.integer "number_of_sessions"
+    t.string "sku"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -99,5 +145,9 @@ ActiveRecord::Schema.define(version: 2020_11_27_232817) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "clients", "accounts"
+  add_foreign_key "clients", "users"
+  add_foreign_key "consultants", "accounts"
+  add_foreign_key "consultants", "users"
   add_foreign_key "services", "users"
 end
