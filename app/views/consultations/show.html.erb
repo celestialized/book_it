@@ -3,11 +3,11 @@
     All Consultations
   <% end %>
 
-  <%= link_to custom_url(:lesson_id => @consultation.id), 
-      class: "course-btn" do %><i class="fa fa-calendar-plus-o">
+  <%= link_to @consultation, 
+      class: "btn btn-primary" do %><i class="fa fa-calendar-plus-o">
       </i> Book This Consultation
   <% end %>
-  
+
   <h1><%= @consultation.title || "Show consultation" %></h1>
     <dd><% @consultation.images.each do |image| %>
         <%= link_to image do %>
